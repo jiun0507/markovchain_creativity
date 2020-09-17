@@ -7,9 +7,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Acknowledgements](#acknowledgements)
-* [Contributing](#contributing)
 * [Contact](#contact)
 
 
@@ -43,9 +41,12 @@ This section should list any major frameworks that you built your project using.
 - pipenv install
     - install modules necessary for the project
 
-### Prerequisites
+- python slideshow.py
+    -> run the code.
 
-This is an example of how to list things you need to use the software and how to install them.
+- cmd + w / ctrl + c
+    -> terminate the window
+
 
 ### Installation
 
@@ -56,9 +57,10 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 Screenshots
+<img width="600" alt="스크린샷 2020-09-18 오전 12 12 18" src="https://user-images.githubusercontent.com/22138357/93490658-b7ccd180-f943-11ea-9383-e50479fcc31e.png">
 
-<!-- CONTRIBUTING -->
-## Credit
+<!-- Acknowledgements -->
+## acknowledgements
 Borrowing the slideshow code sinppets:
 https://gist.github.com/terencewu/034e09f0e318c621516b
 
