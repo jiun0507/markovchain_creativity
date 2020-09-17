@@ -41,5 +41,3 @@ def get_sequence_of_yoga_moves(length: int):
         length -= 1
     return sequence
 
-print(get_sequence_of_yoga_moves(10))
-
