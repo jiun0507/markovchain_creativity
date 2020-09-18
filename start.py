@@ -1,8 +1,6 @@
-# 요가 자세 -> 다양한 콤피네이션을 창조
-
 import random
 
-# The statespace
+# Each pose is equal to a state in the makrov chain
 states = ["big-toe","boat","bow", "chair", "corpse", "cow", "crow", "dolphin", "downward-facing-dog", "eight-angle", "legs-up-the-wall", "net-bearer-bond", "revolved-side-angle"]
 
 # Possible sequences of events
@@ -17,11 +15,13 @@ transitionCombinations = [
 transitionMatrix = [
     [random.randrange(1, 50) for i in range(len(transitionCombinations))] for i in range(len(transitionCombinations))
 ]
+# makes a row of probabilities to sum up to 1
 for row in transitionMatrix:
     sum_row = sum(row)
     for i in range(0, len(row)):
         row[i]= row[i]/sum_row
 
+# Using makrov chain and transition matrix get a random yoga routine
 def get_sequence_of_yoga_moves(length: int):
     cur = random.randint(0, 12)
     print("The first move is: ", states[cur])
