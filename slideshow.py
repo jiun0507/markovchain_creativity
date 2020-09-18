@@ -2,6 +2,13 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from start import get_sequence_of_yoga_moves
 
+"""
+This is the slideshow constructor file of this system.
+It constructs a slideshow using tk library and PIL library to use images in
+the working directory. It displays the sequence of yoga poses constructed
+using makrov chain.
+"""
+
 class HiddenRoot(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
@@ -22,6 +29,7 @@ class MySlideShow(tk.Toplevel):
         self.imageList = []
         self.pixNum = 0
 
+        # Set the fixed width and height of the slideshow
         self.width = 600
         self.height = 450
 
@@ -33,9 +41,12 @@ class MySlideShow(tk.Toplevel):
 
     def getImages(self):
         '''
-        Get image directory from command line or use current directory
+        Get image sequences from yoga_pose folder
         '''
+        # Get random yoga pose routine
         images = get_sequence_of_yoga_moves(10)
+
+        # Construct list of paths to pictures of corresponding yoga poses
         for i in range(0, len(images)-1):
             print(images[i])
             self.imageList.append("./yoga_pose/" + images[i] + ".jpg")
@@ -50,6 +61,7 @@ class MySlideShow(tk.Toplevel):
 
     def showImage(self, filename):
         image = Image.open(filename)
+        # Resizes the images to width and height
         image.thumbnail((self.width, self.height), Image.ANTIALIAS)
 
         #set window size after scaling the original image up/down to fit screen
@@ -61,7 +73,7 @@ class MySlideShow(tk.Toplevel):
         self.persistent_image = ImageTk.PhotoImage(image)
         self.label.configure(image=self.persistent_image)
 
-
+# Instantiates the slideshow class
 slideShow = HiddenRoot()
 slideShow.bind("<Escape>", lambda e: slideShow.destroy())  # exit on esc
-slideShow.mainloop()
+slideShow.mainloop() # Start the slideshow
